@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <sys/types.h>
 #include <unistd.h>
+#include <sys/wait.h>
 
 int main()
 {
@@ -33,6 +34,7 @@ int main()
 	{
 		fork();
 	}
+	wait(0);
 	printf("2 This process ID is %d, parent ID is %d \n", getpid(), getppid());
 	return 0;
 }
